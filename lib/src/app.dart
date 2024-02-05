@@ -13,7 +13,11 @@ class App extends StatelessWidget {
       initialBinding: BaseBindings(),
       debugShowCheckedModeBanner: false,
       smartManagement: SmartManagement.onlyBuilder,
-      home: LoginPage(),
+      initialRoute: '/login',
+      getPages: [
+        GetPage(name: '/login', page: () => LoginPage()),
+        GetPage(name: '/home', page: () => HomePage()),
+      ],
     );
   }
 }
